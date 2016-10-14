@@ -4,7 +4,7 @@
 //
 //  Created by gch on 16/10/14.
 //  Copyright © 2016年 gch. All rights reserved.
-//
+//  如果崩溃,请及时联系我, 开发的小伙伴可以加群q:309786395一起成长学习
 
 #import "ViewController.h"
 #import "Friend.h"
@@ -132,10 +132,16 @@
             if (group.isDelop) {
                 int temp = num;
                 num += [group.friends count];
-                NSLog(@"a == %d", num);
+                NSLog(@"a == %d", index);
                 if (index <= num ) {
-                    int k = index - temp - 1;
-                    return [group.friends objectAtIndex:k];
+                    if (index == 0) {
+                        return [group.friends objectAtIndex:index];
+                    } else {
+                    
+                        int k = index - temp - 1;
+                        return [group.friends objectAtIndex:k];
+                    }
+                    
                 }
             }
         } else {
